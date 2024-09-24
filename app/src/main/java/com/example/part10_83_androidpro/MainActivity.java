@@ -8,6 +8,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -46,7 +47,8 @@ public class MainActivity extends AppCompatActivity {
         newListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                adapterView.setVisibility(View.GONE);
+
+                Toast.makeText(MainActivity.this, "Hello world", Toast.LENGTH_SHORT).show();
             }
         });
     }
