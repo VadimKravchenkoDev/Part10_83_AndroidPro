@@ -2,7 +2,9 @@ package com.example.part10_83_androidpro;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Adapter;
 import android.widget.ArrayAdapter;
+import android.widget.ListAdapter;
 import android.widget.ListView;
 
 import androidx.activity.EdgeToEdge;
@@ -26,18 +28,17 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        ListView listView = findViewById(R.id.listView);
+        ListView myListView = findViewById(R.id.listView);
 
-        ArrayList<String> posts = new ArrayList<>();
+        ArrayList<String> myArrayList = new ArrayList<>();
 
-        for (int i = 0; i < 20; i++) {
-            posts.add("Post " + i);
-            Log.i("posts: ", posts.get(i));
+        for (int i =0; i<20; i++){
+           myArrayList.add("Line "+i);
         }
 
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_1, posts);
+        ArrayAdapter<String> myArrayAdapter = new ArrayAdapter<>(this,
+                android.R.layout.simple_list_item_1, myArrayList);
 
-        listView.setAdapter(arrayAdapter);
+        myListView.setAdapter(myArrayAdapter);
     }
 }
