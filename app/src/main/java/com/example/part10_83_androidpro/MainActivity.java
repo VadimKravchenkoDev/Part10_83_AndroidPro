@@ -2,7 +2,9 @@ package com.example.part10_83_androidpro;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Adapter;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
@@ -28,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        ListView newList = findViewById(R.id.listView);
+        ListView newListView = findViewById(R.id.listView);
 
         ArrayList<String> myArrayList = new ArrayList<>();
 
@@ -39,6 +41,13 @@ public class MainActivity extends AppCompatActivity {
         ArrayAdapter<String> myAdapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_list_item_1, myArrayList);
 
-        newList.setAdapter(myAdapter);
+        newListView.setAdapter(myAdapter);
+
+        newListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                adapterView.setVisibility(View.GONE);
+            }
+        });
     }
 }
