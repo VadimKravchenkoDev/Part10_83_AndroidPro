@@ -1,6 +1,8 @@
 package com.example.part10_83_androidpro;
 
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import androidx.activity.EdgeToEdge;
@@ -28,7 +30,14 @@ public class MainActivity extends AppCompatActivity {
 
         ArrayList<String> posts = new ArrayList<>(20);
 
-        
+        for(int i=0; i<20; i++ ){
+            posts.add("Post "+i);
+            Log.i("posts: ", posts.get(i));
+        }
 
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_list_item_1, posts);
+
+        listView.setAdapter(arrayAdapter);
     }
 }
