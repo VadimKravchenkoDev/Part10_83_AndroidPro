@@ -28,17 +28,17 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        ListView myListView = findViewById(R.id.listView);
+        ListView newList = findViewById(R.id.listView);
 
         ArrayList<String> myArrayList = new ArrayList<>();
 
-        for (int i =0; i<20; i++){
-           myArrayList.add("Line "+i);
+        for (int i = 0; i<20; i++){
+            myArrayList.add(""+i);
         }
 
-        ArrayAdapter<String> myArrayAdapter = new ArrayAdapter<>(this,
+        ArrayAdapter<String> myAdapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_list_item_1, myArrayList);
 
-        myListView.setAdapter(myArrayAdapter);
+        newList.setAdapter(myAdapter);
     }
 }
