@@ -28,10 +28,10 @@ public class MainActivity extends AppCompatActivity {
 
         ListView listView = findViewById(R.id.listView);
 
-        ArrayList<String> posts = new ArrayList<>(20);
+        ArrayList<String> posts = new ArrayList<>();
 
-        for(int i=0; i<20; i++ ){
-            posts.add("Post "+i);
+        for (int i = 0; i < 20; i++) {
+            posts.add("Post " + i);
             Log.i("posts: ", posts.get(i));
         }
 
